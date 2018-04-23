@@ -8,7 +8,7 @@ from usuario import Usuario
 conexion = mysql.connector.connect(user='Fernando', password='Cuauhtli', database='invernadero')
 cursor = conexion.cursor()
 
-usuarioBD = Usuario()
+usuarioBD = Usuario(conexion, cursor)
 @app.route('/')
 def hola():
 	return "Hola"
@@ -20,8 +20,8 @@ def login():
 		p = request.args.get('pwd')
 		print (u)
 		print (p)
-		#return str(usuarioBD.login(u, p))
+		return str(usuarioBD.login(u, p))
 		
-	return "Login"
+	#return "Login"
 	
 app.run()

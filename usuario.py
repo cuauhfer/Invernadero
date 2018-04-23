@@ -25,12 +25,12 @@ class Usuario:
 		self.c.commit()
 	
 	def login(self, u, p):
-		pass_hash = hashlib.new('sha1', bytes(p, 'utf-8'))
-		pass_hash = pass_hash.hexdigest()
+		#pass_hash = hashlib.new('sha1', bytes(p, 'utf-8'))
+		#pass_hash = pass_hash.hexdigest()
 		
 		select = ("SELECT * FROM usuario WHERE username = %s AND password = %s")
 		
-		self.cur.execute(select, (u, pass_hash))
+		self.cur.execute(select, (u, p))
 		resultado = self.cur.fetchall()
 		
 		if resultado:

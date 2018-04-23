@@ -32,7 +32,7 @@
   </ion-item>
   <br>
   <section align="center">
-  	<button ion-button (click)="clickBoton()">Ingresar</button>
+  	<button ion-button full [disabled]="this.usuario.length == 0 || this.password.length == 0" (click)="clickBoton()">Ingresar</button>
   </section>
   
 

@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -23,5 +23,23 @@ def login():
 		return str(usuarioBD.login(u, p))
 		
 	#return "Login"
+	
+@app.route('/invernaderos/', methods=['POST'])
+def invernaderos():
+	if request.method == 'POST':
+		
+		objeto = [{
+			'id' : 0,
+			'ubicacion' : 'Revolucion',
+			'nombre' : 'CUCEI',
+			'cultivos' : 0
+		},{
+			'id' : 1,
+			'ubicacion' : 'El Salto',
+			'nombre' : 'Verde',
+			'cultivos' : 5
+		}]
+		
+		return jsonify(objeto)
 	
 app.run()

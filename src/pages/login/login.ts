@@ -39,7 +39,7 @@ export class LoginPage {
       console.log(data.text());
 
       if(data.text() == "True"){
-        this.navCtrl.setRoot(this.home);
+        this.navCtrl.setRoot(this.home, {user: this.usuario, pwd: this.password});
       }
       else{
         let a = this.alerta.create({

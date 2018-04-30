@@ -4,11 +4,13 @@ app = Flask(__name__)
 
 import mysql.connector
 from usuario import Usuario
+from Invernadero import Invernadero
 
 conexion = mysql.connector.connect(user='Fernando', password='Cuauhtli', database='invernadero')
 cursor = conexion.cursor()
 
 usuarioBD = Usuario(conexion, cursor)
+invernaderoBD = Invernadero(conexion, cursor)
 @app.route('/')
 def hola():
 	return "Hola"
@@ -28,18 +30,16 @@ def login():
 def invernaderos():
 	if request.method == 'POST':
 		
-		objeto = [{
-			'id' : 0,
-			'ubicacion' : 'Revolucion',
-			'nombre' : 'CUCEI',
-			'cultivos' : 0
-		},{
-			'id' : 1,
-			'ubicacion' : 'El Salto',
-			'nombre' : 'Verde',
-			'cultivos' : 5
-		}]
-		
+		if request.is_json:
+			json = request.get_json()
+			print(json)
+			
+			u = json['user']
+			p = json['pwd']
+			
+			print(u, p)
+		objeto = invernaderoBD.getInvernaderos(u, p)
+			
 		return jsonify(objeto)
 	
 app.run()

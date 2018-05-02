@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
- 	 <ion-card *ngFor="let i of invernaderos" (click)="cambiarCultivos()">
+ 	 <ion-card *ngFor="let i of invernaderos" (click)="cambiarCultivos(i)">
 	  	<ion-item>
 	     	<ion-icon name="md-desktop" item-start large></ion-icon>
 	     	<h2>{{ i.nombre }}</h2>

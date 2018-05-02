@@ -37,8 +37,10 @@ export class HomePage {
 
   }
 
-  cambiarCultivos(){
-  	this.navCtrl.push(this.cultivosPage);
+  cambiarCultivos(invernadero){
+  console.log(invernadero)
+  	this.navCtrl.push(this.cultivosPage, 
+  		{'invernadero': invernadero});
   }
 
 }

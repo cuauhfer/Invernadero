@@ -16,8 +16,11 @@ import { ValorPage } from "../valor/valor";
 })
 export class CultivosPage {
 	valorPage = ValorPage;
+  invernadero: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams){
+              this.invernadero = this.navParams.get('invernadero');
   }
 
   ionViewDidLoad() {

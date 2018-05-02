@@ -5,14 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-	  <ion-item>
-	     <ion-icon name="md-desktop" item-start large></ion-icon>
-	     <h2>Invernadero</h2>
-	     <h3>Carretera El Verde-Castillo, <br>El Salto, Jalisco</h3>
-	     <p>Cantidad de cultivos</p>
-	  </ion-item>
+ 	 <ion-card *ngFor="let i of invernaderos">
+	  	<ion-item>
+	     	<ion-icon name="md-desktop" item-start large></ion-icon>
+	     	<h2>{{ i.nombre }}</h2>
+	     	<h3>{{i.ubicacion}}</h3>
+	     	<p>{{i.cultivos}}</p>
+	  	</ion-item>
 
 
-	</ion-card>
+   	</ion-card>
 </ion-content>

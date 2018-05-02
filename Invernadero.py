@@ -49,11 +49,16 @@ class Invernadero:
 				print(res)
 				
 				if res:
+					select_plantas = \
+						("SELECT COUNT(id) FROM planta WHERE id_invernadero = %s")
+					self.cur.execute(select_plantas, (res[0][0], ))
+					plantas = self.cur.fetchall()
+					
 					inverna = {
 						'id' : res[0][0],
 						'ubicacion' : res[0][1],
 						'nombre' : res[0][2],
-						'cultivos' : 0
+						'cultivos' : plantas
 					}
 					
 					lista.append(inverna)

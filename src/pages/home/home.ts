@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { Http } from "@angular/http";
+import { CultivosPage } from "../cultivos/cultivos";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+	cultivosPage = CultivosPage;
 
 	usuario:string;
 	password:string;
@@ -33,6 +35,10 @@ export class HomePage {
   });
   
 
+  }
+
+  cambiarCultivos(){
+  	this.navCtrl.push(this.cultivosPage);
   }
 
 }

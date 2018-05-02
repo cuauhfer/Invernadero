@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from "../pages/login/login";
 import { HttpModule } from "@angular/http";
-import { CultivosPage} from "../pages/cultivos/cultivos";
+import { CultivosPage } from "../pages/cultivos/cultivos";
 import { ValorPage } from "../pages/valor/valor";
 
 @NgModule({

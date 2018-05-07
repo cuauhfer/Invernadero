@@ -64,4 +64,24 @@ class Invernadero:
 					lista.append(inverna)
 			
 			return lista
+	
+	def getCultivos(self, invernadero):
+		select_cultivo = \
+			("SELECT * FROM planta WHERE id_invernadero = %s")
+		self.cur.execute(select_cultivo, (invernadero, ))
+		res = self.cur.fetchall()
+		lista = []
 		
+		print (res)
+		
+		for i in res:
+			culti = {
+				'id': res[0][0],
+				'cultivo': res[0][1],
+				'fecha': res[0][2],
+				'idinv': res[0][3]
+			}
+			
+			lista.append(culti)
+		
+		return res

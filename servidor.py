@@ -41,5 +41,14 @@ def invernaderos():
 		objeto = invernaderoBD.getInvernaderos(u, p)
 			
 		return jsonify(objeto)
-	
+		
+@app.route('/cultivos/', methods=['GET'])
+def cultivos():
+	if request.method == 'GET':
+		i = request.args.get('id')
+		print (i)
+		objeto = invernaderoBD.getCultivos(i)
+		
+		print(objeto)
+		return jsonify(objeto)
 app.run()

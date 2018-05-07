@@ -10,6 +10,10 @@
     {
       "path": "/invernaderos",
       "proxyUrl": "http://127.0.0.1:5000/invernaderos"
+    },
+    {
+      "path": "/cultivos",
+      "proxyUrl": "http://127.0.0.1:5000/cultivos"
     }
 	],
   "integrations": {}

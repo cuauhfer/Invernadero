@@ -17,9 +17,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   								private http: Http) {
-  	console.log(this.navParams.get('user'));
-  	console.log(this.navParams.get('pwd'));
-
   	this.usuario = this.navParams.get('user');
   	this.password = this.navParams.get('pwd');
 
@@ -34,7 +31,6 @@ export class HomePage {
   	console.log(error1);
   });
   
-
   }
 
   cambiarCultivos(invernadero){
